@@ -20,7 +20,7 @@ public class ContatoDAO {
             List<Contato> contatos = new ArrayList<>();
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             
-            Connection conexao = DriverManager.getConnection("jdbc.derby://localhost:1527/lppo-2017-1", "usuario", "senha");
+            Connection conexao = DriverManager.getConnection("jdbc:derby://localhost:1527/lppo-2017-1", "usuario", "senha");
             
             Statement operacao = conexao.createStatement();
             ResultSet resultado = operacao.executeQuery("SELECT * FROM contato");
@@ -41,7 +41,7 @@ public class ContatoDAO {
         } catch (ClassNotFoundException ex) {
             throw new Exception("Driver não encotrado!", ex);
         } catch(SQLException ex){
-            throw new Exception("Erro ao listar os contatos.");
+            throw new Exception("Erro ao listar os contatos.",ex);
         }
     }
     
