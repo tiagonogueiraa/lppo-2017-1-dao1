@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.cesjf.lppo.servlest;
+package br.cesjf.lppo.servlets;
 
 import br.cesjf.lppo.Contato;
 import br.cesjf.lppo.dao.ContatoDAO;
