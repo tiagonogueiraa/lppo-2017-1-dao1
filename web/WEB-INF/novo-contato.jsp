@@ -15,8 +15,9 @@
 	<%@include file="jspf/menu.jspf" %>
         <div><h1>Novo Contato:</h1></div>
 	<form method="post">
-	    <div><label> Nome: <input type="text" name="nome" placeholder="Nome" /> </label> </div>
-	    <div><label> Sobrenome: <input type="text" name="sobrenome" placeholder="Sobrenome" /> </label>  </div>
+	    <div><label> Nome: <input type="text" name="nome" placeholder="Nome" /> </label> </div><br>
+	    <div><label> Sobrenome: <input type="text" name="sobrenome" placeholder="Sobrenome" /> </label>  </div><br>
+	    <div><label> Telefone: <input type="text" name="telefone" placeholder="Telefone" /> </label>  </div><br><br>
 	    <div> <input type="submit" value="Enviar" /> </div>
 	    
 	</form>
