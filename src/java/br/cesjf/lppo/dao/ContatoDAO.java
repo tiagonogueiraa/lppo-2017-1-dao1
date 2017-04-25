@@ -17,11 +17,13 @@ import java.util.List;
 public class ContatoDAO {
     private PreparedStatement opListar;
     private PreparedStatement opNovo;
+    private PreparedStatement opAtualiza;
 
     public ContatoDAO() throws Exception {
         Connection conexao = ConnectionFactory.createConnection();
         opListar = conexao.prepareStatement("SELECT * FROM contato");
         opNovo = conexao.prepareStatement("INSERT INTO contato (nome, sobrenome, telefone) VALUES(?,?,?)");
+        opAtualiza = conexao.prepareStatement("UPDATE contato SET id = ?, sobrenome = ?, telefone = ? WHERE id = ?");
     }
     
     
@@ -60,4 +62,19 @@ public class ContatoDAO {
         }
 
     }
+    
+    public void atualiza(Contato contato) throws Exception {
+        try {
+
+            opAtualiza.setString(1, contato.getNome());
+            opAtualiza.setString(2, contato.getSobrenome());
+            opAtualiza.setString(3, contato.getTelefone());
+            opAtualiza.setLong(4, contato.getId());
+            opAtualiza.executeUpdate();
+
+
+        } catch (SQLException ex) {
+            throw new Exception("Erro ao atualizar o contato!", ex);
+        }
+}
 }
