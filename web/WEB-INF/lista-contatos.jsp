@@ -28,10 +28,11 @@
             <tbody>
             <c:forEach var="contato" items="${contatos}">
                 <tr>
-                    <td>${contato.id}</td>
+                    <td <a href="detalhes.html?=${contato.id}">${contato.id}</a></td>
                     <td>${contato.nome}</td>
                     <td>${contato.sobrenome}</td>
                     <td>${contato.telefone}</td>
+                    
                 </tr>
             </c:forEach>
             </tbody>
